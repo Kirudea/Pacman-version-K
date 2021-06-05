@@ -2,14 +2,15 @@ package Objects;
 
 import java.awt.Color;
 import javax.swing.JPanel;
-import Main.Jogo;
+import Main.Janela;
 
 public class Painels extends JPanel {
 	
 	public Painels(double size_fluid) {
+		size_fluid *= Janela.telaHeight;
 		setLayout(null);
 		setBackground(Color.BLACK);
-		setBounds(0, (int) (Jogo.telaHeight * (1-size_fluid)), 
-				Jogo.telaWidth, (int) (Jogo.telaHeight * size_fluid));
+		setBounds(0, (int) (Janela.telaHeight - size_fluid), 
+				Janela.telaWidth, (int) (size_fluid));
 	}
 }
