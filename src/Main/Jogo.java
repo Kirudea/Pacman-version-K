@@ -7,7 +7,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import Interfaces.GenericInterface;
-import Objects.labelButton;
+import Objects.Button;
 import Objects.Painels;
 
 public class Jogo extends JFrame {
@@ -58,8 +58,7 @@ public class Jogo extends JFrame {
 		faixa.setBounds((int) ((telaWidth - W) / 2), (int) (telaHeight * 0.05), W, H);
 		
 		// ----------- Painel's -----------
-		JPanel commands = new Painels(0.4);
-		//commands.setBackground(Color.WHITE);//Pode Tirar
+		JPanel commands = new Painels(0.25);
 		commands.setVisible(false);
 		TelInicial.add(commands);
 		
@@ -72,7 +71,7 @@ public class Jogo extends JFrame {
 		H = (int) (telaHeight * 0.07);
 		
 		// Button 1
-		JLabel bttPLay = new labelButton("Jogar", new GenericInterface() {
+		JLabel bttPLay = new Button("Jogar", new GenericInterface() {
 			@Override
 			public void Metodo() {
 				// Play Game
@@ -82,7 +81,7 @@ public class Jogo extends JFrame {
 		bttPLay.setBounds((int) ((telaWidth - W) / 2), 0, W, H);
 
 		// Button 2
-		JLabel bttCommands = new labelButton("Comandos", new GenericInterface() {
+		JLabel bttCommands = new Button("Comandos", new GenericInterface() {
 			@Override
 			public void Metodo() {
 				menu.setVisible(false);
@@ -90,10 +89,10 @@ public class Jogo extends JFrame {
 			}
 		});
 		menu.add(bttCommands);
-		bttCommands.setBounds((int) ((telaWidth - W) / 2), H, W, H);
+		bttCommands.setBounds((int) ((telaWidth - W) / 2), bttPLay.getY() + H, W, H);
 		
 		// Button 3
-		JLabel bttExit = new labelButton("Sair", new GenericInterface() {	
+		JLabel bttExit = new Button("Sair", new GenericInterface() {	
 			@Override
 			public void Metodo() {
 				// Close Game
@@ -101,37 +100,11 @@ public class Jogo extends JFrame {
 			}
 		});
 		menu.add(bttExit);
-		bttExit.setBounds((int) ((telaWidth - W) / 2), H*2, W, H);
+		bttExit.setBounds((int) ((telaWidth - W) / 2), bttCommands.getY() + H, W, H);
 		
-		// ----------- Commands -----------	
-		
-		// Command 1
-		JLabel CommUp = new labelButton("W", null);
-		commands.add(CommUp);
-		CommUp.setBounds((int)((telaWidth-H)*0.36), 0, H, H);
-		
-		// Command 2
-		JLabel CommLeft = new labelButton("A", null);
-		commands.add(CommLeft);
-		CommLeft.setBounds(CommUp.getX()-H, H, H, H);
-		
-		// Command 3
-		JLabel CommDown = new labelButton("S", null);
-		commands.add(CommDown);
-		CommDown.setBounds(CommUp.getX(), H, H, H);
-		
-		// Command 4
-		JLabel CommRight = new labelButton("D", null);
-		commands.add(CommRight);
-		CommRight.setBounds(CommUp.getX()+H, H, H, H);
-		
-		// Command 4
-		JLabel CommPause = new labelButton("Enter to Pause", null);
-		commands.add(CommPause);
-		CommPause.setBounds(CommRight.getX()+H*5, H, H*6, H);
-		
+		// ----------- Commands -----------		
 		// Button 1
-		JLabel bttBack = new labelButton("Voltar", new GenericInterface() {
+		JLabel bttBack = new Button("Voltar", new GenericInterface() {
 			@Override
 			public void Metodo() {
 				commands.setVisible(false);
@@ -139,6 +112,6 @@ public class Jogo extends JFrame {
 			}
 		});
 		commands.add(bttBack);
-		bttBack.setBounds((telaWidth-W)/2, CommDown.getY()+H*3, W, H);
+		bttBack.setBounds((int) ((telaWidth - W) / 2), 0/*posY do "S" + H*2*/, W, H);
 	}
 }
