@@ -7,9 +7,10 @@ import Main.Jogo;
 public class Painels extends JPanel {
 	
 	public Painels(double size_fluid) {
+		size_fluid *= Jogo.telaHeight;
 		setLayout(null);
 		setBackground(Color.BLACK);
-		setBounds(0, (int) (Jogo.telaHeight * (1-size_fluid)), 
-				Jogo.telaWidth, (int) (Jogo.telaHeight * size_fluid));
+		setBounds(0, Jogo.telaHeight - (int)size_fluid, 
+				Jogo.telaWidth, (int)size_fluid);
 	}
 }
