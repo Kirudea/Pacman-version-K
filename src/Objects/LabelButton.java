@@ -8,9 +8,9 @@ import javax.swing.JLabel;
 import Interfaces.GenericInterface;
 import Main.Window;
 
-public class labelButton extends JLabel {
+public class LabelButton extends JLabel {
 	
-	public labelButton(String text, GenericInterface GI) {
+	public LabelButton(String text, GenericInterface GI) {
 		setText(text);
 		//setOpaque(false);
 		setForeground(Color.WHITE);

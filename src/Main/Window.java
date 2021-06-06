@@ -3,12 +3,8 @@ package Main;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
 
 import Interfaces.GenericInterface;
-import Objects.Painels;
-import Objects.labelButton;
 
 public class Window extends JFrame {
 	// Screen Size

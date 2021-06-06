@@ -6,8 +6,7 @@ import javax.swing.JPanel;
 
 import Interfaces.GenericInterface;
 import Objects.Painels;
-import Objects.labelButton;
-import java.awt.Color;
+import Objects.LabelButton;
 
 public class HomeScreen extends Painels{
 	
@@ -45,12 +44,12 @@ public class HomeScreen extends Painels{
         H = (int) (Window.telaHeight * 0.07);
 
         // Button 1
-        JLabel bttPLay = new labelButton("Jogar", eventPlay);
+        JLabel bttPLay = new LabelButton("Jogar", eventPlay);
         menu.add(bttPLay);
         bttPLay.setBounds((int) ((Window.telaWidth - W) / 2), menu.getHeight()-H*4, W, H);
 
         // Button 2
-        JLabel bttCommands = new labelButton("Comandos", new GenericInterface() {
+        JLabel bttCommands = new LabelButton("Comandos", new GenericInterface() {
             @Override
             public void Method() {
                 menu.setVisible(false);
@@ -61,39 +60,39 @@ public class HomeScreen extends Painels{
         bttCommands.setBounds((int) ((Window.telaWidth - W) / 2), menu.getHeight()-H*3, W, H);
 
         // Button 3
-        JLabel bttExit = new labelButton("Sair", eventExit);
+        JLabel bttExit = new LabelButton("Sair", eventExit);
         menu.add(bttExit);
         bttExit.setBounds((int) ((Window.telaWidth - W) / 2), menu.getHeight()-H*2, W, H);
 
         // ----------- Commands -----------
 
         // Command 1
-        JLabel CommUp = new labelButton("W", null);
+        JLabel CommUp = new LabelButton("W", null);
         commands.add(CommUp);
         CommUp.setBounds((int) ((Window.telaWidth - H) /2), commands.getHeight()-(int)(H*6.2), H, H);
 
         // Command 2
-        JLabel CommLeft = new labelButton("A", null);
+        JLabel CommLeft = new LabelButton("A", null);
         commands.add(CommLeft);
         CommLeft.setBounds(CommUp.getX() - H, CommUp.getY()+H, H, H);
 
         // Command 3
-        JLabel CommDown = new labelButton("S", null);
+        JLabel CommDown = new LabelButton("S", null);
         commands.add(CommDown);
         CommDown.setBounds(CommUp.getX(), CommLeft.getY(), H, H);
 
         // Command 4
-        JLabel CommRight = new labelButton("D", null);
+        JLabel CommRight = new LabelButton("D", null);
         commands.add(CommRight);
         CommRight.setBounds(CommUp.getX() + H, CommLeft.getY(), H, H);
 
         // Command 4
-        JLabel CommPause = new labelButton("Enter to Pause", null);
+        JLabel CommPause = new LabelButton("Enter to Pause", null);
         commands.add(CommPause);
         CommPause.setBounds((Window.telaWidth-H*6)/2, commands.getHeight()-H*4, H * 6, H);
 
         // Button 1
-        JLabel bttBack = new labelButton("Voltar", new GenericInterface() {
+        JLabel bttBack = new LabelButton("Voltar", new GenericInterface() {
             @Override
             public void Method() {
                 commands.setVisible(false);
