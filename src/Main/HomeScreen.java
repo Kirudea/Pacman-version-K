@@ -101,8 +101,6 @@ public class HomeScreen extends Painels{
         });
         commands.add(bttBack);
         bttBack.setBounds((Window.telaWidth - W) / 2, commands.getHeight()-H*2, W, H);
-	
-        //return TelInicial;
     }
 
 }
