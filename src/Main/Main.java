@@ -2,7 +2,6 @@ package Main;
 
 public class Main {
     public static void main(String[] args) {
-    	Janela j = new Janela();
-    	
+    	Window j = new Window();
     }
 }

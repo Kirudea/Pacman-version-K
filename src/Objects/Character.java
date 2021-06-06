@@ -2,13 +2,13 @@ package Objects;
 
 import javax.swing.ImageIcon;
 
-public class person {
+public class Character {
 	ImageIcon[] frames;
 	static ImageIcon frame; 
 	int posX;
 	int posY;
 	
-	public person(int frames, int posX, int posY) {
+	public Character(int frames, int posX, int posY) {
 		this.frames = new ImageIcon[frames];
 		
 		frame = this.frames[0];			

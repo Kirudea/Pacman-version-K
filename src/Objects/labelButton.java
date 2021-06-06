@@ -6,7 +6,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JLabel;
 import Interfaces.GenericInterface;
-import Main.Janela;
+import Main.Window;
 
 public class labelButton extends JLabel {
 	
@@ -14,7 +14,7 @@ public class labelButton extends JLabel {
 		setText(text);
 		//setOpaque(false);
 		setForeground(Color.WHITE);
-		setFont(new Font("Dialog", 1, (int)(Janela.telaHeight*0.056)));
+		setFont(new Font("Dialog", 1, (int)(Window.telaHeight*0.056)));
 		setHorizontalAlignment(JLabel.CENTER);
 		
 		if(GI != null) {
@@ -33,7 +33,7 @@ public class labelButton extends JLabel {
 				}			
 				@Override
 				public void mouseClicked(MouseEvent e) {
-					GI.Metodo();					
+					GI.Method();					
 				}
 			});
 		}

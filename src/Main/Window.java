@@ -10,18 +10,18 @@ import Interfaces.GenericInterface;
 import Objects.Painels;
 import Objects.labelButton;
 
-public class Janela extends JFrame {
+public class Window extends JFrame {
 	// Screen Size
 	public static int telaWidth;
 	public static int telaHeight;
 
-	public Janela() {
+	public Window() {
 		// Tela
 		setTitle("Pacman");
 		getContentPane().setBackground(Color.BLACK);
 		setLayout(null);
 		setIconImage(new ImageIcon(
-		getClass().getResource("../Imagens/personagens/Pacman.png")).getImage());
+		getClass().getResource("../Images/Characters/Pacman/Pacman.png")).getImage());
 		//setSize(1000, 562);
 		setLocationRelativeTo(null);
 		// -----FULL-SCREEN-----
@@ -36,27 +36,27 @@ public class Janela extends JFrame {
 		telaWidth = getWidth();
 		telaHeight = getHeight();
 		
-        JPanel jogo = new Jogo();
-        jogo.setVisible(false);
-        add(jogo);
-        jogo.setBounds(0, 0, telaWidth, telaHeight);
-        //addTelaInicial();
+        HomeScreen homeScreen = new HomeScreen(1);
+        add(homeScreen);
         
-		JPanel telaInicial = new TelaInicial(new GenericInterface() {
+        Game game = new Game(1);
+        
+		homeScreen.createHomeSreen(new GenericInterface() {
 			@Override
-			public void Metodo() {
-				jogo.setVisible(true);
+			public void Method() {
+				homeScreen.setVisible(false);
+				add(game);
+				game.startGame();
 			}
 		}, 
 		new GenericInterface() {
 			@Override
-			public void Metodo() {
+			public void Method() {
 				// Close Game
 				dispose();
 			}
 		});
-        add(telaInicial);
-        telaInicial.setBounds(0, 0, telaWidth, telaHeight);
-        
+		
+		game.createGame(null);
 	}
 }
