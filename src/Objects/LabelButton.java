@@ -12,7 +12,6 @@ public class LabelButton extends JLabel {
 	
 	public LabelButton(String text, GenericInterface GI) {
 		setText(text);
-		//setOpaque(false);
 		setForeground(Color.WHITE);
 		setFont(new Font("Dialog", 1, (int)(Window.telaHeight*0.056)));
 		setHorizontalAlignment(JLabel.CENTER);

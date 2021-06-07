@@ -16,8 +16,7 @@ public class Window extends JFrame {
 		setTitle("Pacman");
 		getContentPane().setBackground(Color.BLACK);
 		setLayout(null);
-		setIconImage(new ImageIcon(
-		getClass().getResource("../Images/Characters/Pacman/Pacman.png")).getImage());
+		setIconImage(new ImageIcon(getClass().getResource("/Images/Characters/Pacman/Pacman.png")).getImage());
 		//setSize(1000, 562);
 		setLocationRelativeTo(null);
 		// -----FULL-SCREEN-----
